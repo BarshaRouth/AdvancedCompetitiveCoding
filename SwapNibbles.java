@@ -2,8 +2,15 @@ import java.util.Scanner;
 
 public class SwapNibbles {
 
-    public static int swapNibbles(int num){
-        return ((num & 0x0F)<<4) | ((num & 0xF0)>>4);
+    public static int swapNibbles(int num) {
+        // Isolate the lower nibble (last 4 bits) and shift it left by 4 positions
+        int lowerNibble = (num & 0x0F) << 4;
+        
+        // Isolate the upper nibble (first 4 bits) and shift it right by 4 positions
+        int upperNibble = (num & 0xF0) >> 4;
+        
+        // Combine the shifted nibbles using the bitwise OR operator
+        return lowerNibble | upperNibble;
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

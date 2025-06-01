@@ -9,7 +9,7 @@ public class EulerPhiFunction {
                 while (n % p == 0) {
                     n /= p;
                 }
-                result = result * (p - 1) / p;
+                result -= result / p;
                 // result -= result / p;
             }
         }
